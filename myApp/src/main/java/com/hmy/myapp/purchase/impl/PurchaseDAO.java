@@ -20,6 +20,7 @@ public class PurchaseDAO {
 
 	public void insertPurchase(PurchaseVO vo) {
 		String sql="insert into purchase (ordernum, num, name, cnt) values((select nvl(max(num),0)+1 from purchase),?,?,?)";
+		String sql2="update product set cnt=cnt-? where name=?";
 		// nvl( , )
 		// null값을 다른값 or 0으로 변경하는 함수
 		System.out.println("insertPurchase() 수행중");
@@ -30,6 +31,12 @@ public class PurchaseDAO {
 			pstmt.setString(2, vo.getName());
 			pstmt.setInt(3, vo.getCnt());
 			pstmt.executeUpdate();
+			
+			pstmt= conn.prepareStatement(sql2);
+			pstmt.setInt(1, vo.getCnt());
+			pstmt.setString(2, vo.getName());
+			pstmt.executeUpdate();
+			
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}

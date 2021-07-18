@@ -60,7 +60,7 @@
 	</section>
 
 	<section class="ftco-section bg-light">
-			<div class="row">
+			<div class="row" style="margin-left:10%; margin-top:2%; margin-right:10%;">
 				<div class="col-lg-9">
 					<div class="row">
 					<!-- 반복문시작 -->

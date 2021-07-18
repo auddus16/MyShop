@@ -11,6 +11,7 @@
 				<prop key="/productList.do">productList</prop>
 				<prop key="/product.do">product</prop>
 				<prop key="/purchase.do">purchase</prop>
+				<prop key="/checkproduct.do">checkproduct</prop>
 			</props>
 		</property>
 	</bean>
@@ -20,6 +21,7 @@
 	<bean id="join" class="com.hmy.myapp.member.controller.JoinController"/>
 	<bean id="productList" class="com.hmy.myapp.product.controller.ProductListController"/>
 	<bean id="product" class="com.hmy.myapp.product.controller.ProductController"/>
+	<bean id="checkproduct" class="com.hmy.myapp.product.controller.CheckProductController"/>
 	<bean id="purchase" class="com.hmy.myapp.purchase.controller.PurchaseController"/>
 	
 
