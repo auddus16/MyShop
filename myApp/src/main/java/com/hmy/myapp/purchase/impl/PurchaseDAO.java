@@ -19,7 +19,7 @@ public class PurchaseDAO {
 	private PreparedStatement pstmt=null;
 
 	public void insertPurchase(PurchaseVO vo) {
-		String sql="insert into purchase (ordernum, num, name, cnt) values((select nvl(max(num),0)+1 from purchase),?,?,?)";
+		String sql="insert into purchase (ordernum, num, name, cnt) values((select nvl(max(ordernum),0)+1 from purchase),?,?,?)";
 		String sql2="update product set cnt=cnt-? where name=?";
 		// nvl( , )
 		// null값을 다른값 or 0으로 변경하는 함수
@@ -91,7 +91,7 @@ public class PurchaseDAO {
 	}
 	
 	public List<PurchaseVO> getPurchaseList(MemberVO vo) {
-		String sql="select * from purchase where num=? order by id desc";
+		String sql="select * from purchase where num=? order by orderdate desc";
 		System.out.println("getPurchaseList() 수행중");
 		List<PurchaseVO> datas=new ArrayList<PurchaseVO>();
 		conn=JDBC.getConnection();

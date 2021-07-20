@@ -1,9 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%
-int user= (Integer)session.getAttribute("num");
-%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -36,50 +33,52 @@ int user= (Integer)session.getAttribute("num");
        <span class="oi oi-menu"></span> Menu
    </button>
 
+   <div class="collapse navbar-collapse" id="ftco-nav">
+       <ul class="navbar-nav ml-auto">
+         <li class="nav-item"><a href="purchaseList.do" class="nav-link">구매내역</a></li>
+       </ul>
+     </div>
 </div>
 </nav>
 <!-- END nav -->
 
-<div class="hero-wrap js-fullheight" style="background-image: url('images/bg_1.jpg');">
-  <div class="overlay"></div>
-  <div class="container">
-    <div class="row no-gutters slider-text js-fullheight align-items-center" data-scrollax-parent="true">
-      <div class="col-md-7 ftco-animate">
-        <span class="subheading">Welcome to MyShop</span>
-        <h1 class="mb-4">원하는 상품을 구매하세요!</h1>
-        <p class="caps">해당 홈페이지는 로그인이 필요합니다.</p>
-    </div>
-</div>
-</div>
-</div>
+<section class="hero-wrap hero-wrap-2" style="background-image: url('images/bg_2.jpg');">
+		<div class="overlay"></div>
+		<div class="container">
+			<div class="row no-gutters slider-text align-items-end justify-content-center">
+				<div class="col-md-9 ftco-animate pb-5 text-center">
+					<h1 class="mb-0 bread">나의 구매내역</h1>
+				</div>
+			</div>
+		</div>
+	</section>
 
-
-<section class="ftco-section ftco-no-pb ftco-no-pt">
-   <div class="container">
-      <div class="row">
-         <div class="col-md-7"></div>
-         <div class="col-md-5 order-md-last" style="text-align:center;">
-          <div class="login-wrap p-4 p-md-5">
-              <h3 class="mb-4">LOGIN</h3>
-              <form action="login.do" class="signup-form">
-                 <div class="form-group">
-                    <label class="label" for="name">ID</label>
-                    <input type="text" name="id" class="form-control">
-                </div>
-                <div class="form-group">
-                    <label class="label" for="email">PASSWORD</label>
-                    <input type="password" name="pw" class="form-control">
-                </div>
-             <div class="form-group d-flex justify-content-end mt-4">
-                 <button type="submit" class="btn btn-primary">LOGIN</button>
-             </div>
-         </form>
-         <p class="text-center">아직 회원이 아니세요? <a href="join.jsp">회원가입</a></p>
-     </div>
- </div>
-</div>
-</div>
-</section>
+	<section class="ftco-section bg-light">
+			<div class="row" style="margin-left:10%; margin-top:2%; margin-right:10%;">
+				<div class="col-lg-9">
+					<div class="row">
+					<!-- 반복문시작 -->
+	<table border="1" width="100%">
+	<tr>
+		<th bgcolor="pink">주문번호</th>
+		<th bgcolor="pink">주문상품</th>
+		<th bgcolor="pink">주문수량</th>
+		<th bgcolor="pink">주문일자</th>
+	</tr>
+	<c:forEach items="${purchaseList}" var="v">
+		<tr>
+			<td>${v.ordernum}</td>
+			<td>${v.name}</td>
+			<td>${v.cnt}</td>
+			<td>${v.orderdate}</td>
+		</tr>
+	</c:forEach>
+</table>
+					</div>
+					
+				</div>
+			</div>
+		</section>
 
 
 <footer class="ftco-footer ftco-no-pt">

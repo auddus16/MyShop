@@ -27,4 +27,4 @@ insert into product values(1, 'æ∆¿Ã∆–µÂ', 100000, 5, 'æ∆¿Ã∆–µÂ¥Â');
 insert into product values(2, 'æ∆¿Ã∆˘13', 200000, 10, 'æ∆¿Ã∆˘¿Ã¥Â');
 insert into product values(3, '∏∆∫œ', 1200000, 2, '∏∆∫œ¿Ã¥Â');
 
-select * from product;
+select * from purchase;

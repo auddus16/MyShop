@@ -35,12 +35,7 @@
 
      <div class="collapse navbar-collapse" id="ftco-nav">
        <ul class="navbar-nav ml-auto">
-         <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
-         <li class="nav-item active"><a href="about.html" class="nav-link">About</a></li>
-         <li class="nav-item"><a href="course.html" class="nav-link">Course</a></li>
-         <li class="nav-item"><a href="instructor.html" class="nav-link">Instructor</a></li>
-         <li class="nav-item"><a href="blog.html" class="nav-link">Blog</a></li>
-         <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
+         <li class="nav-item"><a href="purchaseList.do" class="nav-link">구매내역</a></li>
        </ul>
      </div>
    </div>
@@ -73,12 +68,10 @@
        <form action="purchase.do" class="signup-form">
        		<input type="hidden" name="name" value="${pro.name}">
        		<input type="hidden" name="num" value="${pro.num}">
-       		<input type="hidden" name="price" value="${pro.price}">
-               <div class="form-group d-flex justify-content-end mt-4">
+       		<input type="hidden" name="cnt" value="${pro.cnt}">
                <p>${pro.price}원 x ${pro.cnt} = ${pro.price * pro.cnt}원</p>
                <br>
                  <button type="submit" class="btn btn-primary">구매</button>
-             </div>
          </form>
      </div>
    </div>
