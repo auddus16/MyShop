@@ -1,8 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
-	<!-- HandlerMapping 등록 -->
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.2.xsd">
+	
+	<context:component-scan base-package="com.hmy.myapp"></context:component-scan>
+	
+	<!-- HandlerMapping 등록 
 	<bean class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping">
 		<property name="mappings">
 			<props>
@@ -16,7 +21,7 @@
 		</property>
 	</bean>
 	
-	<!-- Controller 목록 -->
+	 Controller 목록 
 	<bean id="login" class="com.hmy.myapp.member.controller.LoginController"/>
 	<bean id="join" class="com.hmy.myapp.member.controller.JoinController"/>
 	<bean id="productList" class="com.hmy.myapp.product.controller.ProductListController"/>
@@ -24,5 +29,5 @@
 	<bean id="checkproduct" class="com.hmy.myapp.product.controller.CheckProductController"/>
 	<bean id="purchase" class="com.hmy.myapp.purchase.controller.PurchaseController"/>
 	
-
+-->
 </beans>
