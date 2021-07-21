@@ -22,21 +22,27 @@ public class PurchaseServiceImpl implements PurchaseService{
 	}
 
 	@Override
-	public void deleteBoard(PurchaseVO vo) {
+	public void deletePurchase(PurchaseVO vo) {
 		// TODO Auto-generated method stub
 		purchaseDAO.deletePurchase(vo);
 	}
 
 	@Override
-	public PurchaseVO getBoard(PurchaseVO vo) {
+	public PurchaseVO getPurchase(PurchaseVO vo) {
 		// TODO Auto-generated method stub
 		return purchaseDAO.getPurchase(vo);
 	}
 
 	@Override
-	public List<PurchaseVO> getBoardList(MemberVO vo) {
+	public List<PurchaseVO> getPurchaseList(MemberVO vo) {
 		// TODO Auto-generated method stub
 		return purchaseDAO.getPurchaseList(vo);
+	}
+
+	@Override
+	public void updatePurchase(PurchaseVO vo) {
+		// TODO Auto-generated method stub
+		purchaseDAO.updatePurchase(vo);
 	}
 
 }

@@ -13,13 +13,13 @@ public class MemberServiceImpl implements MemberService{
 	private MemberDAO memDAO;
 	
 	@Override
-	public void insertUsers(MemberVO mem) {
+	public void insertMember(MemberVO mem) {
 		// TODO Auto-generated method stub
 		memDAO.insertMember(mem);
 	}
 
 	@Override
-	public MemberVO getUsers(MemberVO mem) {
+	public MemberVO getMember(MemberVO mem) {
 		// TODO Auto-generated method stub
 		return memDAO.getMember(mem);
 	}

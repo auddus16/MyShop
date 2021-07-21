@@ -7,11 +7,11 @@ import com.hmy.myapp.member.MemberVO;
 public interface PurchaseService {
 	void insertPurchase(PurchaseVO vo);
 
-	//void updateBoard(PurchaseVO vo);
+	void updatePurchase(PurchaseVO vo);
 
-	void deleteBoard(PurchaseVO vo);
+	void deletePurchase(PurchaseVO vo);
 
-	PurchaseVO getBoard(PurchaseVO vo);
+	PurchaseVO getPurchase(PurchaseVO vo);
 
-	List<PurchaseVO> getBoardList(MemberVO vo);
+	List<PurchaseVO> getPurchaseList(MemberVO vo);
 }

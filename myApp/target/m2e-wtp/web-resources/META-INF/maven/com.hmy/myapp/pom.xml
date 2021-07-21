@@ -39,7 +39,12 @@
          <artifactId>commons-dbcp</artifactId>
          <version>1.4</version>
       </dependency>
-	
+	<!-- JdbcDaoSupport를 상속받아 만들어지지않아 추가함 -->
+      <dependency>
+         <groupId>org.springframework</groupId>
+         <artifactId>spring-jdbc</artifactId>
+         <version>${org.springframework-version}</version>
+      </dependency>
 		<!-- Spring -->
 		<dependency>
 			<groupId>org.springframework</groupId>

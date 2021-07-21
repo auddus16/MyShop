@@ -1,7 +1,7 @@
 package com.hmy.myapp.member;
 
 public interface MemberService {
-	void insertUsers(MemberVO mem);
+	void insertMember(MemberVO mem);
 
-	MemberVO getUsers(MemberVO mem);
+	MemberVO getMember(MemberVO mem);
 }

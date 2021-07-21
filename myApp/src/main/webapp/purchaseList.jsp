@@ -28,7 +28,7 @@
 <body>
  <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
    <div class="container">
-     <a class="navbar-brand" href="index.html"><span>My</span>Shop</a>
+     <a class="navbar-brand" href="productList.do"><span>My</span>Shop</a>
      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
        <span class="oi oi-menu"></span> Menu
    </button>
@@ -64,14 +64,18 @@
 		<th bgcolor="pink">주문상품</th>
 		<th bgcolor="pink">주문수량</th>
 		<th bgcolor="pink">주문일자</th>
+		<th bgcolor="pink">주문취소</th>
 	</tr>
 	<c:forEach items="${purchaseList}" var="v">
+		<form action="deletePurchase.do?ordernum=${v.ordernum}" method="post">
 		<tr>
 			<td>${v.ordernum}</td>
 			<td>${v.name}</td>
 			<td>${v.cnt}</td>
 			<td>${v.orderdate}</td>
+			<td align="center"><button type="submit" class="btn btn-primary">취소</button></td>
 		</tr>
+		</from>
 	</c:forEach>
 </table>
 					</div>

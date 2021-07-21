@@ -62,4 +62,45 @@ public class MemberDAO {
 	      }
 	      return data;
 	   }
+//	num int primary key, 
+//	id varchar(20) not null,
+//	pw varchar(20) not null,
+//	name varchar(30) not null,
+//	address varchar(1000),
+//	point int default 0
+	public void updateMember(MemberVO vo) {
+		String sql= "update member set id=?, pw=?, name=?, address=? where num=?";
+		System.out.println("updateMember() 수행중");
+		conn = JDBC.getConnection();
+		try {
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, vo.getId());
+			pstmt.setString(2, vo.getPw());
+			pstmt.setString(3, vo.getName());
+			pstmt.setString(4, vo.getAddress());
+			pstmt.setInt(5, vo.getNum());
+			
+			pstmt.executeQuery(sql);
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			JDBC.close(conn, pstmt);
+		}
 	}
+	
+	public void deleteMember(MemberVO vo) {
+		String sql= "delete from member where num=?";
+		System.out.println("deleteMember() 수행중");
+		conn = JDBC.getConnection();
+		try {
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setInt(1, vo.getNum());
+			
+			pstmt.executeQuery(sql);
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			JDBC.close(conn, pstmt);
+		}
+	}
+}
