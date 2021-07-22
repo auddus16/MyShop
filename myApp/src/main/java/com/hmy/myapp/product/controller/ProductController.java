@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.hmy.myapp.product.ProductService;
@@ -42,6 +43,17 @@ public class ProductController{
 		
 		List<ProductVO> arr= productService.getProductList();
 	
+		m.addAttribute("proList", arr);
+		
+		return "productList.jsp";
+	}
+	
+	@RequestMapping(value="/search.do")
+	public String search(@ModelAttribute("p")ProductVO vo, Model m) {
+		System.out.println("상품조회중");
+		
+		List<ProductVO> arr= productService.searchList(vo);
+		
 		m.addAttribute("proList", arr);
 		
 		return "productList.jsp";

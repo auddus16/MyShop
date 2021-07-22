@@ -10,6 +10,14 @@ public class ProductVO {
 	private int price;
 	private int cnt;
 	private String pic;
+	private String search;
+	
+	public String getSearch() {
+		return search;
+	}
+	public void setSearch(String search) {
+		this.search = search;
+	}
 	public int getNum() {
 		return num;
 	}

@@ -48,7 +48,7 @@
 		<div class="container">
 			<div class="row no-gutters slider-text align-items-end justify-content-center">
 				<div class="col-md-9 ftco-animate pb-5 text-center">
-					<h1 class="mb-0 bread">My Product List</h1>
+					<h1 class="mb-0 bread"><a href="productList.do">Product List</a></h1>
 				</div>
 			</div>
 		</div>
@@ -57,7 +57,18 @@
 	<section class="ftco-section bg-light">
 			<div class="row" style="margin-left:10%; margin-top:2%; margin-right:10%;">
 				<div class="col-lg-9">
+					<div class="col-lg-3 sidebar">
+					<!-- 검색 -->
+						<form action="search.do" class="search-form">
+							<div class="form-group">
+								<span class="icon fa fa-search" style="cursor:hand" onclick="document.forms[0].submit()"></span>
+								<input type="text" name="search" class="form-control" placeholder="Search..." value="${p.search}">
+							</div>
+						</form>
+						</div>
 					<div class="row">
+					
+					<br>
 					<!-- 반복문시작 -->
 					<c:forEach items="${proList}" var="v">
 						<div class="col-md-6 d-flex align-items-stretch ftco-animate">

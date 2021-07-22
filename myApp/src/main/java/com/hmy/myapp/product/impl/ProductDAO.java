@@ -29,6 +29,13 @@ public class ProductDAO {
 		System.out.println("getProductList() 수행중");
 		return jdbcTemplate.query(sql, new ProductRowMapper());
 	}
+	
+	public List<ProductVO> searchList(ProductVO vo) {
+		String sql = "select * from product where name like '%'||?||'%' order by num desc";
+		System.out.println("getProductList() 수행중");
+		Object[] args = { vo.getSearch() };
+		return jdbcTemplate.query(sql, args, new ProductRowMapper());
+	}
 
 }
 class ProductRowMapper implements RowMapper {
