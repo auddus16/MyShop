@@ -42,64 +42,15 @@
    </div>
  </nav>
  <!-- END nav -->
- 
  <section class="hero-wrap hero-wrap-2" style="background-image: url('images/bg_2.jpg');">
   <div class="overlay"></div>
   <div class="container">
     <div class="row no-gutters slider-text align-items-end justify-content-center">
       <div class="col-md-9 ftco-animate pb-5 text-center">
-       <p class="breadcrumbs"><span class="mr-2"><a href="productList.do">상품목록 <i class="fa fa-chevron-right"></i></a></span> <span>${pro.name} <i class="fa fa-chevron-right"></i></span></p>
-       <h1 class="mb-0 bread">${pro.name}</h1>
+		 <h2>${exception.message}</h2>
      </div>
    </div>
  </div>
-</section>
-
-
-
-<section class="ftco-section ftco-about img">
- <div class="container">
-  <div class="row d-flex">
-   <div class="col-md-12 about-intro">
-    <div class="row">
-     <div class="col-md-6 d-flex">
-      <div class="d-flex about-wrap">
-       <div class="img d-flex align-items-center justify-content-center" style="background-image:url(images/about-1.jpg);">
-       </div>
-       <div class="img-2 d-flex align-items-center justify-content-center" style="background-image:url(images/about.jpg);">
-       </div>
-     </div>
-   </div>
-   <div class="col-md-6 pl-md-5 py-5">
-    <div class="row justify-content-start pb-3">
-      <div class="col-md-12 heading-section ftco-animate">
-       <span class="subheading">상품번호: ${pro.num} </span>
-       <h2 class="mb-4">${pro.name}</h2>
-       <p>${pro.price}원</p>
-       <p>잔여수량: ${pro.cnt}개</p>
-       <form action="checkproduct.do" class="signup-form">
-       		<input type="hidden" name="name" value="${pro.name}">
-       		<input type="hidden" name="num" value="${pro.num}">
-       		<input type="hidden" name="price" value="${pro.price}">
-              <div class="form-group">
-                   <label class="label" for="name">수량선택*</label>
-              		<select name="cnt">
-              			<c:forEach var="i" begin="1" end="${pro.cnt}">
-              				<option value="${i}">${i}</option>
-              			</c:forEach>
-              		</select>
-               </div>
-               <div class="form-group d-flex justify-content-end mt-4">
-                 <button type="submit" class="btn btn-primary">구매</button>
-             </div>
-         </form>
-     </div>
-   </div>
- </div>
-</div>
-</div>
-</div>
-</div>
 </section>
 
 <footer class="ftco-footer ftco-no-pt">

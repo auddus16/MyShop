@@ -19,6 +19,10 @@ public class MemberController {
 	public String login(MemberVO vo, HttpSession session) {
 		System.out.println("로그인중");
 		
+		if(vo.getId()==null || vo.getId().equals("")) {
+			throw new IllegalArgumentException("아이디 입력은 필수입니다. ");
+		}
+		
 		MemberVO mem= memberService.getMember(vo);
 		
 		session.setAttribute("num", mem.getNum());
