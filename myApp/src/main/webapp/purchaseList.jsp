@@ -1,6 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -72,14 +74,16 @@
 			<td>${v.ordernum}</td>
 			<td>${v.name}</td>
 			<td>${v.cnt}</td>
-			<td>${v.orderdate}</td>
+			<td><fmt:formatDate value="${v.orderdate}" pattern="yyyy-mm-dd"/></td>
 			<td align="center"><button type="submit" class="btn btn-primary">취소</button></td>
 		</tr>
 		</from>
 	</c:forEach>
 </table>
 					</div>
-					
+					<br>
+					<a href="dataTransform.do">Xml파일 다운</a>
+					<br><a href="dataTransform2.do">json파일 다운</a>
 				</div>
 			</div>
 		</section>

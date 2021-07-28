@@ -37,8 +37,6 @@
 			<div class="collapse navbar-collapse" id="ftco-nav">
        <ul class="navbar-nav ml-auto">
          <li class="nav-item"><a href="purchaseList.do" class="nav-link">구매내역</a></li>
-         <li class="nav-item"><a href="dataTransform.do" class="nav-link">구매내역(Xml 변환)</a></li>
-         <li class="nav-item"><a href="dataTransform2.do" class="nav-link">구매내역(json 변환)</a></li>
        </ul>
      </div>
 		</div>

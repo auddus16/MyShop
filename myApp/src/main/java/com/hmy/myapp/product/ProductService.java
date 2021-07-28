@@ -5,5 +5,5 @@ import java.util.List;
 public interface ProductService {
 	ProductVO getProduct(ProductVO vo);
 	List<ProductVO> getProductList();
-	List<ProductVO> searchList(ProductVO vo);
+	List<ProductVO> searchList(String s);
 }

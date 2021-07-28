@@ -52,7 +52,7 @@ public class ProductController{
 	public String search(@ModelAttribute("p")ProductVO vo, Model m) {
 		System.out.println("상품조회중");
 		
-		List<ProductVO> arr= productService.searchList(vo);
+		List<ProductVO> arr= productService.searchList(vo.getSearch());
 		
 		m.addAttribute("proList", arr);
 		
