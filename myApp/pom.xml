@@ -26,11 +26,6 @@
          <artifactId>mybatis</artifactId>
          <version>3.3.1</version>
       </dependency>
-      <dependency>
-         <groupId>org.apache.ibatis</groupId>
-         <artifactId>ibatis-core</artifactId>
-         <version>3.0</version>
-      </dependency>
      <!-- Mybatis Spring -->
       <dependency>
          <groupId>org.mybatis</groupId>

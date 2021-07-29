@@ -2,20 +2,17 @@ package com.hmy.myapp.product.impl;
 
 import java.util.List;
 
-import org.apache.ibatis.session.SqlSession;
+import org.mybatis.spring.SqlSessionTemplate;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import com.hmy.myapp.product.ProductVO;
-import com.hmy.myapp.util.SqlSessionFactoryBean;
 
 @Repository("productDAO")
-public class ProductDAO {
+public class ProductDAO{
 	
-	private SqlSession mybatis;
-
-	public ProductDAO() {
-		mybatis= SqlSessionFactoryBean.getSqlSessionInstace();
-	}
+	@Autowired
+	private SqlSessionTemplate mybatis;
 	
 	public ProductVO getProduct(ProductVO vo) {
 		return (ProductVO)mybatis.selectOne("ProductDAO.getProduct", vo);
