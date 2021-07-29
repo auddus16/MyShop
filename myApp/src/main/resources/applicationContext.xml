@@ -9,7 +9,14 @@
 		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-4.2.xsd">
 
 	<context:component-scan base-package="com.hmy.myapp" />
+	<bean id="sessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
+		<property name="dataSource" ref="ds"></property>
+		 <property name="configLocation" value="classpath:sql-map-config.xml" />
+	</bean>
 	
+	<bean class="org.mybatis.spring.SqlSessionTemplate">
+		<constructor-arg ref="sessionFactory"></constructor-arg>
+	</bean>
 	<!-- DataSource -->
    <bean class="org.apache.commons.dbcp.BasicDataSource" id="ds" destroy-method="close">
       <property name="driverClassName" value="oracle.jdbc.driver.OracleDriver" />

@@ -31,6 +31,12 @@
          <artifactId>ibatis-core</artifactId>
          <version>3.0</version>
       </dependency>
+     <!-- Mybatis Spring -->
+      <dependency>
+         <groupId>org.mybatis</groupId>
+         <artifactId>mybatis-spring</artifactId>
+         <version>1.2.4</version>
+      </dependency> 
 	<!-- 오라클 -->
       <dependency>
          <groupId>com.oracle.database.jdbc</groupId>
