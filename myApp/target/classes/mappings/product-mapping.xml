@@ -5,15 +5,15 @@
 <mapper namespace="ProductDAO">
 
    <select id="getProduct" resultType="product" parameterType="product">
-		SELECT * FROM product WHERE NUM= #{num}
+		SELECT * FROM PRODUCT WHERE NUM= #{num}
    </select>
 
    <select id="getProductList" resultType="product">
-   		SELECT * FROM product ORDER BY num DESC
+   		SELECT * FROM PRODUCT ORDER BY NUM DESC
    </select>
 
    <select id="searchList" parameterType="String" resultType="product">
-      	SELECT * FROM product WHERE name LIKE '%'||#{value}||'%' ORDER BY num DESC
+      	SELECT * FROM PRODUCT WHERE NAME LIKE '%'||#{value}||'%' ORDER BY NUM DESC
    </select>
 
 </mapper>

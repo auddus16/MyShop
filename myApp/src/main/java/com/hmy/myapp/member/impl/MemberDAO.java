@@ -17,7 +17,7 @@ public class MemberDAO {
 	private PreparedStatement pstmt=null;
 	
 	public void insertMember(MemberVO vo) {
-		String sql="insert into member values((select NVL(MAX(num)+1, 0) from member), ?, ?, ?, ?, 0)";
+		String sql="INSERT INTO MEMBER VALUES((SELECT NVL(MAX(num)+1, 0) FROM MEMBER), ?, ?, ?, ?, 0)";
 	    System.out.println("insertMember() 수행중");
 	    conn=JDBC.getConnection();
 	    try {
@@ -36,7 +36,7 @@ public class MemberDAO {
 	}
 	
 	public MemberVO getMember(MemberVO vo) {
-	      String sql="select * from member where id=? and pw=?";
+	      String sql="SELECT * FROM MEMBER WHERE ID=? AND PW=?";
 	      System.out.println("getMember() 수행중");
 	      MemberVO data=null;
 	      conn=JDBC.getConnection();
@@ -62,14 +62,9 @@ public class MemberDAO {
 	      }
 	      return data;
 	   }
-//	num int primary key, 
-//	id varchar(20) not null,
-//	pw varchar(20) not null,
-//	name varchar(30) not null,
-//	address varchar(1000),
-//	point int default 0
+
 	public void updateMember(MemberVO vo) {
-		String sql= "update member set id=?, pw=?, name=?, address=? where num=?";
+		String sql= "UPDATE MEMBER SET ID=?, PW=?, NAME=?, ADDRESS=? WHERE NUM=?";
 		System.out.println("updateMember() 수행중");
 		conn = JDBC.getConnection();
 		try {
@@ -89,7 +84,7 @@ public class MemberDAO {
 	}
 	
 	public void deleteMember(MemberVO vo) {
-		String sql= "delete from member where num=?";
+		String sql= "DELETE FROM MEMBER WHERE NUM=?";
 		System.out.println("deleteMember() 수행중");
 		conn = JDBC.getConnection();
 		try {

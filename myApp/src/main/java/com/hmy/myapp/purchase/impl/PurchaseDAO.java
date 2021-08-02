@@ -20,8 +20,8 @@ public class PurchaseDAO {
 	private JdbcTemplate jdbcTemplate;
 
 	public void insertPurchase(PurchaseVO vo) {
-		String sql="insert into purchase (ordernum, num, name, cnt) values((select nvl(max(ordernum),0)+1 from purchase),?,?,?)";
-		String sql2="update product set cnt=cnt-? where name=?";
+		String sql="INSERT INTO PURCHASE (ORDERNUM, NUM, NAME, CNT) VALUES((SELECT NVL(max(ORDERNUM),0)+1 FROM PURCHASE),?,?,?)";
+		String sql2="UPDATE PRODUCT SET CNT=CNT-? WHERE NAME=?";
 		// nvl( , )
 		// null값을 다른값 or 0으로 변경하는 함수
 		System.out.println("insertPurchase() 수행중");
@@ -30,21 +30,21 @@ public class PurchaseDAO {
 	}
 	
 	public void updatePurchase(PurchaseVO vo) {
-		String sql="update purchase set cnt=? where ordernum=?";
+		String sql="UPDATE PURCHASE SET CNT=? WHERE ORDERNUM=?";
 		System.out.println("updatePurchase() 수행중");
 		
 		jdbcTemplate.update(sql, vo.getCnt(),vo.getOrdernum());
 	}
 	
 	public void deletePurchase(PurchaseVO vo) {
-		String sql="delete from purchase where ordernum=?";
+		String sql="DELETE FROM PURCHASE WHERE ORDERNUM=?";
 		System.out.println("deletePusrchase() 수행중");
 		
 		jdbcTemplate.update(sql, vo.getOrdernum());
 	}
 	
 	public PurchaseVO getPurchase(PurchaseVO vo) {
-		String sql="select * from purchase where ordernum=?";
+		String sql="SELECT * FROM PURCHASE WHERE ORDERNUM=?";
 		System.out.println("getPurchase() 수행중");
 		Object[] args= {vo.getOrdernum()};
 		return jdbcTemplate.queryForObject(sql, args,new PurchaseRowMapper());
@@ -52,7 +52,7 @@ public class PurchaseDAO {
 	}
 	
 	public List<PurchaseVO> getPurchaseList(MemberVO vo) {
-		String sql="select * from purchase where num=? order by orderdate desc";
+		String sql="SELECT * FROM PURCHASE WHERE NUM=? ORDER BY ORDERDATE DESC";
 		System.out.println("getPurchaseList() 수행중");
 		List<PurchaseVO> datas=new ArrayList<PurchaseVO>();
 		Object[] args= {vo.getNum()};
@@ -68,7 +68,7 @@ class PurchaseRowMapper implements RowMapper{
 		data.setOrdernum(rs.getInt("ordernum"));
 		data.setName(rs.getString("name"));
 		data.setNum(rs.getInt("num"));
-		data.setOrderdate(rs.getString("orderdate"));
+		data.setOrderdate(rs.getDate("orderdate"));
 		data.setCnt(rs.getInt("cnt"));
 		return data;
 	}

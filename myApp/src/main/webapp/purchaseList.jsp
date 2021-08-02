@@ -74,7 +74,7 @@
 			<td>${v.ordernum}</td>
 			<td>${v.name}</td>
 			<td>${v.cnt}</td>
-			<td><fmt:formatDate value="${v.orderdate}" pattern="yyyy-mm-dd"/></td>
+			<td><fmt:formatDate type="time" value="${v.orderdate}" pattern="yyyy-MM-dd HH:mm:ss"/></td>
 			<td align="center"><button type="submit" class="btn btn-primary">취소</button></td>
 		</tr>
 		</from>

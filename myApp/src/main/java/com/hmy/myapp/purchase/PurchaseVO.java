@@ -1,4 +1,7 @@
 package com.hmy.myapp.purchase;
+
+import java.util.Date;
+
 //ordernum int primary key,
 //num int not null references member(num),
 //cnt int not null,
@@ -8,7 +11,7 @@ public class PurchaseVO {
 	private int num;
 	private String name;
 	private int cnt;
-	private String orderdate;
+	private Date orderdate;
 	
 	public String getName() {
 		return name;
@@ -34,10 +37,10 @@ public class PurchaseVO {
 	public void setCnt(int cnt) {
 		this.cnt = cnt;
 	}
-	public String getOrderdate() {
+	public Date getOrderdate() {
 		return orderdate;
 	}
-	public void setOrderdate(String orderdate) {
+	public void setOrderdate(Date orderdate) {
 		this.orderdate = orderdate;
 	}
 	
