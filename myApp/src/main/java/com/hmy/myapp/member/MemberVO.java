@@ -1,19 +1,31 @@
 package com.hmy.myapp.member;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+import org.hibernate.annotations.ColumnDefault;
+
 //num int primary key, 
 //id varchar(20) not null,
 //pw varchar(20) not null,
 //name varchar(30) not null,
 //address varchar(1000),
 //point int default 0
-
+@Entity(name="member")
+@Table(name="member")
 public class MemberVO {
+	@Id
+	@GeneratedValue
 	private int num;
 	private String id;
 	private String pw;
 	private String name;
 	private String address;
+	@ColumnDefault("0")
 	private int point;
+	
 	public int getNum() {
 		return num;
 	}

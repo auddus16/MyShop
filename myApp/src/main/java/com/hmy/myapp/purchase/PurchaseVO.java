@@ -2,11 +2,18 @@ package com.hmy.myapp.purchase;
 
 import java.util.Date;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+
 //ordernum int primary key,
 //num int not null references member(num),
 //cnt int not null,
 //orderdate date default SYSDATE
+@Entity(name="purchase")
 public class PurchaseVO {
+	@Id
+	@GeneratedValue
 	private int ordernum;
 	private int num;
 	private String name;

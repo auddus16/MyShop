@@ -38,9 +38,11 @@ public class PurchaseDAO {
 	
 	public void deletePurchase(PurchaseVO vo) {
 		String sql="DELETE FROM PURCHASE WHERE ORDERNUM=?";
+		String sql2="UPDATE PRODUCT SET CNT=CNT+? WHERE NAME=?";
 		System.out.println("deletePusrchase() ผ๖วเม฿");
 		
 		jdbcTemplate.update(sql, vo.getOrdernum());
+		jdbcTemplate.update(sql2, vo.getCnt(),vo.getName());
 	}
 	
 	public PurchaseVO getPurchase(PurchaseVO vo) {

@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.hmy.myapp.member.MemberVO;
+import com.hmy.myapp.product.impl.ProductDAO;
 import com.hmy.myapp.purchase.PurchaseService;
 import com.hmy.myapp.purchase.PurchaseVO;
 

@@ -1,3 +1,6 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -70,25 +73,25 @@
 											<div class="col-md-6">
 												<div class="form-group">
 													<label class="label" for="name">ID</label>
-													<input type="text" class="form-control" name="id" id="name" placeholder="Name">
+													<input type="text" class="form-control" name="id" id="name" placeholder="아이디">
 												</div>
 											</div>
 											<div class="col-md-6"> 
 												<div class="form-group">
 													<label class="label" for="email">PASSWORD</label>
-													<input type="password" class="form-control" name="pw" id="email" placeholder="Email">
+													<input type="password" class="form-control" name="pw" id="email" placeholder="비밀번호">
 												</div>
 											</div>
 											<div class="col-md-12">
 												<div class="form-group">
 													<label class="label" for="subject">NAME</label>
-													<input type="text" class="form-control" name="name" id="subject" placeholder="Subject">
+													<input type="text" class="form-control" name="name" id="subject" placeholder="이름">
 												</div>
 											</div>
 											<div class="col-md-12">
 												<div class="form-group">
 													<label class="label" for="#">ADDRESS</label>
-													<textarea name="address" class="form-control" cols="30" rows="4" placeholder="Message"></textarea>
+													<textarea name="address" class="form-control" cols="30" rows="4" placeholder="주소"></textarea>
 												</div>
 											</div>
 											<div class="col-md-12">
@@ -105,10 +108,6 @@
 							</div>
 						</div>
 					</div>
-				</div>
-
-				<div class="col-md-12 mt-5">
-					<div id="map" class="bg-white"></div>
 				</div>
 			</div>
 		</div>
