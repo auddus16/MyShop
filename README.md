@@ -3,7 +3,7 @@
 Spring framework 공부하며 간단한 쇼핑몰 웹 서비스 구현<br>
 기능-회원가입, 마이페이지, 상품페이지, 장바구니
 
-## 🗓️ 2021.04 ~ 2021.05
+## 🗓️ 2021.07
 
 ## ✍️Study
 [Sprin framework Study 기록](https://auddus16.tistory.com/category/%EC%9B%B9%20%EA%B0%9C%EB%B0%9C/Spring%20Framework)
